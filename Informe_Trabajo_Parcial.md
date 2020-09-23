@@ -20,6 +20,16 @@ Problema: Para este trabajo nos dedicaremos a realizar un juego llamado Quoridor
 
 # Marco Teórico 
 Para el presente proyecto utilizaremos 3 algoritmos los cuales compararemos para encontrar el más eficiente. Los problemas pueden tener diferentes soluciones pero siempre existe una que en comparación al resto es la más efectiva muchas veces por su complejidad. La complejidad de un algoritmo nos ayuda a determinar el tiempo de ejecución y la memoria que requiere como parámetros para definir su eficiencia. 
+## Pathfinding
+Se denomina Pathfinding al trazado del camino más corto entre dos puntos. Este trazado es realizado por algoritmos predefinidos bajo un cierto criterio. Para el curso, se trabajan estos algoritmos para hallar el camino más contro entre dos nodos de un grafo. Algunos algoritmos son: el algoritmo de Dijkstra, BFS, A*, D*, etc. Los algoritmos de búsqueda de rutas son importantes ya que se utilizan en aplicaciones como Google Maps, sistemas de navegación por satélite y paquetes de enrutamiento a través de internet.
+
+![pathfinding](https://en.scratch-wiki.info/w/images/Pathfinding.jpg)
+
+## Complejidad de los Algoritmos
+La complejidad algorítmica es una métrica teórica que nos ayuda a describir el comportamiento de un algoritmo en términos de tiempo de ejecución (tiempo que tarda un algoritmo en resolver un problema) y memoria requerida (cantidad de memoria necesaria para procesar las instrucciones que solucionan dicho problema). Esto nos ayuda a comprar entre la efectividad de un algoritmo y otro, y decidir cuál es el más óptimo. A la idea del tiempo de ejecución se le conoce como complejidad temporal, y a la idea de la memoria requerida para resolver el problema se le denomina complejidad espacial. Dichos valores se encuentran en función del tamaño del problema (valor o valores dictados por el número de elementos con los que un algoritmo trabaja), aunque en algunos casos no.
+
+![complejidad](https://jorgeantilefblog.files.wordpress.com/2013/11/orden-de-complejidad2.jpg)
+
 
 # Estado del Arte
 ## Depth - first Search (DFS)
