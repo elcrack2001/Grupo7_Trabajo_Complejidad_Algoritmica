@@ -1,3 +1,4 @@
+﻿![enter image description here](https://www.laureate.net/wp-content/uploads/2019/03/10-UPC-Universidad-Peruana-de-Ciencias-Aplicadas.png)
 # Grupo7_Trabajo_Complejidad_Algoritmica
 
 <center><b>Complejidad Algorítmica – CC41</b></center> <br>
