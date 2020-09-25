@@ -130,5 +130,10 @@ d) Declaracion de las ḿetricas que se usaran para evaluar la eficienciade los 
 Para las métricas, se utilizará la medición de la eficiencia de los algoritmos en base al tiempo y a su complejidad
 
 # Experimentos
+Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Backtracking + divide y vencerás, BFS, A*) puesto en la misma situación donde se simulará un laberinto para poder comprobar la eficiencia de cada uno. Estos experimentos están basados en los realizados por el canal de youtube de Dane Perry Svendsen.
+
+## Video de demostración
+[![Demo](https://j.gifs.com/q71wBG.gif)](https://www.youtube.com/watch?v=X3x7BlLgS-4&list=LLfFGr-JPbJxUU11j6xl5Cnw&index=1&ab_channel=DanePerrySvendsen)
+
 # Resultados
 # Conclusiones
