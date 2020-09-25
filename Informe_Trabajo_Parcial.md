@@ -32,19 +32,26 @@ La complejidad algorítmica es una métrica teórica que nos ayuda a describir e
 
 
 # Estado del Arte
-## Depth - first Search (DFS)
-En la búsqueda de profundidad, la idea es recorrer lo más profundo posible siempre que sea posible. La búsqueda de profundidad explora las aristas del vértice descubierto más recientemente que todavía tiene aristas sin explorar. Una vez que todas las aristas han sido exploradas, la búsqueda regresa para revisar el resto de aristas. Este proceso continúa hasta que se haya descubierto o todos los vértices que son accesibles desde el vértice original. Si quedan vértices sin descubrir, la búsqueda en profundidad selecciona uno de ellos como nueva fuente y repite la búsqueda desde dicha fuente. El algoritmo repite este proceso hasta que se hayan descubierto todos los vértices.
-### Cómo funciona el algoritmo DFS
-En la búsqueda de profundidad primeros descubre un vértice durante un escaneo de la lista de adyacencia de un vértice u ya descubierto, registra este evento estableciendo al atributo predecesor v.father a u. El grafo predecesor producido por una búsqueda en profundidad primero debe estar compuesto por varios árboles, porque la búsqueda puede repetirse desde múltiples fuentes. Por lo tanto, se define el subgrafo predecesor de una búsqueda en profundidad.
 
-Gfather = (V, Efather), donde
+## A - star (A*)
+El Algoritmo A * tiene su origen en el año 1968 y fue desarrollado principalmente para aportar elementos a la determinación de rutas de costo mínimo. Este algoritmo es una mejora desarrollada a los postulados del algoritmo Dijsktra que se encarga de encontrar rutas más cortas dentro de un grafo. En esta modificación se toma como punto central la observación búsquedas informadas dentro del grafo que nos permitan tomar decisiones óptimas sobre los caminos que deben tomarse para recorrer de forma eficiente el grafo.
+### Cómo funciona el algoritmo A*
+Para la aplicación de este algoritmo debemos comprender como se procede a dividir el costo de la ruta. En este caso se divide en dos partes donde g (n) representa el costo de la ruta desde su origen hasta algún nodo n dentro del grafo. También tenemos que h (n) representa el costo estimado de la ruta desde el nodo n al nodo de destino, calculado por una suposición heurística. En él, se logra equilibrar g (n) y h (n) mientras itera el grafo, asegurando así que en cada iteración elija el nodo con el costo total más bajo f (n) = g (n) + h (n).
 
-Efather = {(v.father, v): v ∈ V y v.father ≠ NIL}
-
-El subgrafo predecesor de una búsqueda de profundidad primero forma un bosque de profundidad que comprende varios árboles. Las aristas en E son aristas de árboles. Cada vértice es inicialmente blanco, aparece en gris cuando se descubre en la búsqueda y ennegrecido cuando finaliza, es decir, cuando se ha examinado completamente su lista de adyacencia. Esta técnica garantiza que cada vértice termine exactamente en un árbol de profundidad, de modo que estos árboles estén separados. Además de crear un bosque en profundidad, la búsqueda en profundidad también marca el tiempo de cada vértice. Cada vértice v tiene dos marcas de tiempo: la primera marca v.d registra cuándo se descubre por primera vez y la segunda marca v.f registra cuándo la búsqueda termina de examinar la lista de adyacencia. Estas marcas de tiempo proporcionan información importante sobre la estructura del gráfico y generalmente son útiles para razonar sobre el comportamiento de la búsqueda en profundidad.
+![a-star_algorithm](https://www.edureka.co/blog/wp-content/uploads/2019/12/Astar_progress_animation.gif)
 
 ### Pseudocódigo
-![dfs_pseudocode](https://i.stack.imgur.com/MIlwU.png)
+![a-star_pseudocode](https://i.stack.imgur.com/8nAs8.png)
+
+## Breadth First Search (BFS)
+El algoritmo de búsqueda por amplitud (BFS por sus siglas en inglés) es una manera sistemática de recorrer todos los nodos de un grafo, teniendo como parámetros un nodo de inicio y un nodo de destino. Este enfoque se denomina en "amplitud" porque desde cada vértice V que se visita se busca en forma tan amplia como sea posible, visitando todos los vértices o nodos adyacentes a V. 
+### Cómo funciona el algoritmo BFS
+La estrategia seria partir de algún vértice U, visitar U y, después, visitar cada uno de los vértices adyacentes a U. Hay que repetir el proceso para cada nodo adyacente a U, siguiendo el orden en que fueron visitados con la característica que si estos, en caso de haber sido visitados, se les asigna una etiqueta de "visitados" para no aumentar el tiempo de búsqueda y contarlos denuevo.
+
+![bfs_algorithm](https://koenig-media.raywenderlich.com/uploads/2017/04/bfs1-1.gif)
+
+## Pseudocódigo
+![bfs_pseudocode](http://rosalind.info/media/pseudocode_bfs.png)
 
 ## Backtracking
 El Backtracking es una estrategia para encontrar soluciones a problemas que satisfacen restricciones.
@@ -92,10 +99,10 @@ Compararemos los algoritmos de acuerdo a los diferentes tipos de entrada que le 
 
 Los tamaños de n del tablero para nuestro testeo serán: 
 
-3
-9 (Tamaño original)
-100
-1000 
+*3
+*9 (Tamaño original)
+*100
+*1000 
 
 a) Declaración de 3 algoritmos a usar para alcanzar el objetivo
 Para nuestro proyecto emplearemos 3 algoritmos de búsqueda los cuales son: 
@@ -104,7 +111,9 @@ Para nuestro proyecto emplearemos 3 algoritmos de búsqueda los cuales son:
 
 - Backtracking con divide y vencerás: Para esto el peón formará rectángulos alrededor suyo limitando su espacio de movimiento en caso tenga paredes cerca, esto es divide y vencerás ya que creará su propio tablero dentro del tablero para concentrarse en resolverlo primero. El backtracking entra cuando el peón busque las posibles salidas que tenga de ese rectángulo para seguir avanzando eligiendo la posición más cercana a él, en caso de que le pusiera otro muro en frente volverá por el camino que ideó originalmente y decidiendo otro camino más cercano. 
 
-- Grafos DFS: En grafos, el peón tomará toda las rutas decidiendo el camino más corto para llegar a su destino, el cual será modificado cada vez que un muro se ponga en frente. Creemos que este será el más efectivo. 
+- BFS: El peón tomará toda las rutas decidiendo el camino más corto para llegar a su destino, el cual será modificado cada vez que un muro se ponga en frente. Creemos que este será el más efectivo. 
+
+- A*: En este caso, el peón buscará la manera más corta de llegar a su extremo opuesto (destino) siguiento unas métricas heurísticas entre nodos de la matriz para evaluar sus camino elegido. Cabe resaltar, que en este entregable no se contará con las barreras que pueden elegir colocar los jugadores.
 
 b) Ası mismo, identificación del espacio de búsqueda;
 
