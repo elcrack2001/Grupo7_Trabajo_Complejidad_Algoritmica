@@ -104,36 +104,46 @@ Los tamaños de n del tablero para nuestro testeo serán:
 *100
 *1000 
 
+El objetivo de estas pruebas es medir el tiempo de cada algoritmo que 
+
 a) Declaración de 3 algoritmos a usar para alcanzar el objetivo
 Para nuestro proyecto emplearemos 3 algoritmos de búsqueda los cuales son: 
 
 - Por fuerza bruta: En este caso el peón buscará todas las posibles soluciones de caminos para llegar a su objetivo sin embargo solo escogerá la primera solución que encuentre para que sea más rápido ya que en un tablero de muchos azulejos puede generar una cantidad muy grande de caminos posibles. 
 
-- Backtracking con divide y vencerás: Para esto el peón formará rectángulos alrededor suyo limitando su espacio de movimiento en caso tenga paredes cerca, esto es divide y vencerás ya que creará su propio tablero dentro del tablero para concentrarse en resolverlo primero. El backtracking entra cuando el peón busque las posibles salidas que tenga de ese rectángulo para seguir avanzando eligiendo la posición más cercana a él, en caso de que le pusiera otro muro en frente volverá por el camino que ideó originalmente y decidiendo otro camino más cercano. 
+- Divide y vencerás: Para esto el peón formará rectángulos alrededor suyo limitando su espacio de movimiento en caso tenga paredes cerca, esto es divide y vencerás ya que creará su propio tablero dentro del tablero para concentrarse en resolverlo primero. El backtracking entra cuando el peón busque las posibles salidas que tenga de ese rectángulo para seguir avanzando eligiendo la posición más cercana a él, en caso de que le pusiera otro muro en frente volverá por el camino que ideó originalmente y decidiendo otro camino más cercano. 
 
 - BFS: El peón tomará toda las rutas decidiendo el camino más corto para llegar a su destino, el cual será modificado cada vez que un muro se ponga en frente. Creemos que este será el más efectivo. 
 
 - A*: En este caso, el peón buscará la manera más corta de llegar a su extremo opuesto (destino) siguiento unas métricas heurísticas entre nodos de la matriz para evaluar sus camino elegido. Cabe resaltar, que en este entregable no se contará con las barreras que pueden elegir colocar los jugadores.
 
-b) Ası mismo, identificación del espacio de búsqueda;
+b) Así mismo, identificación del espacio de búsqueda
+El espacio de búsqueda abarca toda la matriz (tablero) dado que esta se implementa para que esté unida por nodos. Visto de esta manera, los algoritmos de búsqueda de camino más corto recorren los nodos adyacentes dado un nodo de inicio. Es decir, cabe la posibilidad que en el peor de los casos se recorra todo el tablero para poder llegar al destino. Es por ello, que se define al espacio de búsqueda como todo el tablero.
 
 c) Declaracíon de diferentes tamanos de entradas de datos para trabajar
 Para la creación de nuestra tabla utilizaremos la fórmula de (2*n)+1, ya que consideraremos las líneas de una tabla normal como espacios dentro de una matriz para colocar las paredes. utilizaremos entonces para las comparaciones los tamaños de: 
 
-- 3
-- 9 (Tamaño original de tablero de quoridor)
-- 100
-- 1000 
+- 9x9 (Tamaño original de tablero de quoridor)
+- 15*15
+- 25*22
 
+No obstante, esto se implementará cuando se habilite la funcionalidad de colocar las paredes.
 
 d) Declaracion de las ḿetricas que se usaran para evaluar la eficienciade los algoritmos a usar. 
-Para las métricas, se utilizará la medición de la eficiencia de los algoritmos en base al tiempo y a su complejidad
+Para las métricas, se utilizará la medición de la eficiencia de los algoritmos en base al tiempo y a su complejidad.
 
 # Experimentos
-Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Backtracking + divide y vencerás, BFS, A*) puesto en la misma situación donde se simulará un laberinto para poder comprobar la eficiencia de cada uno. Estos experimentos están basados en los realizados por el canal de youtube de Dane Perry Svendsen.
+Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Backtracking + divide y vencerás, BFS, A*) puesto en la misma situación donde se simulará un laberinto para poder comprobar la eficiencia de cada uno. Estos experimentos están basados en los realizados por el canal de youtube de Dane Perry Svendsen. Sin embargo, cabe aclarar que el tiempo de los algoritmos depende del programa que se esté utilizando tanto como el hardware que lo prueba.
 
 ## Video de demostración
 [![Demo](https://j.gifs.com/q71wBG.gif)](https://www.youtube.com/watch?v=X3x7BlLgS-4&list=LLfFGr-JPbJxUU11j6xl5Cnw&index=1&ab_channel=DanePerrySvendsen)
 
 # Resultados
-# Conclusiones
+- BFS:
+- A*:
+  - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> siendo el ganador la ficha número 1.
+  - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> siendo el ganador la ficha número 2.
+- Divide y vencerás:
+
+# Conclusiones y Recomendaciones
+- El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución.
