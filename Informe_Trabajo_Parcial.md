@@ -140,6 +140,8 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 
 # Resultados
 - BFS:
+  - Para la primera matriz, el tiempo de resolución del problema es  10.62555456161499
+  - Para la primera matriz, el tiempo de resolución del problema es  17.98764456235452
 - A*:
   - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> siendo el ganador la ficha número 1.
   - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> siendo el ganador la ficha número 2.
