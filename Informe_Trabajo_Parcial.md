@@ -40,11 +40,15 @@ Para la aplicación de este algoritmo debemos comprender como se procede a divid
 
 ![a-star_algorithm](https://www.edureka.co/blog/wp-content/uploads/2019/12/Astar_progress_animation.gif)
 
+### A* Time Complexity
+Dependiendo de la heurística y el contexto de los grafos, es entendible que en el peor de los casos la complejidad del algoritmo sea O(V + E) donde V son los vértices y E representan las aristas habiendo recorrido todo el grafo. Sin embargo, ¿qué pasaría si el grafo resulta ser infinito? medir con estas métricas la complejidad carece de sentido. Es por ello, que se utiliza otro enfoque en donde solamente se requiere evaluar el factor de conexión entre nodos (b) y examinar cada vértice en profundidad menor o igual al vértice d (destino. Si la meta es detenerse cuando se llega al vértice de destino, se terminará obteniendo una complejidad de O(b^d) 
+
 ### Pseudocódigo
 ![a-star_pseudocode](https://i.stack.imgur.com/8nAs8.png)
 
 ## Breadth First Search (BFS)
 El algoritmo de búsqueda por amplitud (BFS por sus siglas en inglés) es una manera sistemática de recorrer todos los nodos de un grafo, teniendo como parámetros un nodo de inicio y un nodo de destino. Este enfoque se denomina en "amplitud" porque desde cada vértice V que se visita se busca en forma tan amplia como sea posible, visitando todos los vértices o nodos adyacentes a V. 
+
 ### Cómo funciona el algoritmo BFS
 La estrategia seria partir de algún vértice U, visitar U y, después, visitar cada uno de los vértices adyacentes a U. Hay que repetir el proceso para cada nodo adyacente a U, siguiendo el orden en que fueron visitados con la característica que si estos, en caso de haber sido visitados, se les asigna una etiqueta de "visitados" para no aumentar el tiempo de búsqueda y contarlos denuevo.
 
@@ -79,6 +83,7 @@ c <- primero (P)
 mientras c != null
 si válido (P, c) entonces mostrar (P, c)
 c <- siguiente (P, c)
+
 # Metodología
 La metodología que utilizaremos para resolver este problema se divide en tres partes:
 
@@ -148,17 +153,17 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 
 # Resultados
 - BFS:
-  - Para la primera matriz, el tiempo de resolución del problema es  10.62555456161499
-  - Para la segunda matriz, el tiempo de resolución del problema es  17.98764456235452
+  - Para la primera matriz, el tiempo de resolución del problema es  10.62555456161499 segundos
+  - Para la segunda matriz, el tiempo de resolución del problema es  17.98764456235452 segundos
 - A*:
-  - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> siendo el ganador la ficha número 1.
-  - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> siendo el ganador la ficha número 2.
+  - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> segundos siendo el ganador la ficha número 1.
+  - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> segundos siendo el ganador la ficha número 2.
 - Divide y vencerás:
-  - Para la primera matriz 9x9 vacia, el tiempo de resolucion del problema es de:  1.0542097091674805
-  - El tiempo del tablero vacio 25x25 es:  6.013184070587158
-  - El tiempo del tablero con laberinto 9x9 es:  1.416558027267456
-  - El tiempo del tablero vacio 101x101 es:  111.29700016975403
+  - Para la primera matriz 9x9 vacia, el tiempo de resolucion del problema es de:  1.0542097091674805 segundos
+  - El tiempo del tablero vacio 25x25 es:  6.013184070587158 segundos
+  - El tiempo del tablero con laberinto 9x9 es:  1.416558027267456 segundos
+  - El tiempo del tablero vacio 101x101 es:  111.29700016975403 segundos
 
 
 # Conclusiones y Recomendaciones
-El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125>, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 y finalmente el de fuerza bruta, muy por detras de los otros 2, con un tiempo total de 17.98764456235452. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de fuerza bruta. 
+El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125> segundos, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 segundos y finalmente el de fuerza bruta, muy por detras de los otros 2, con un tiempo total de 17.98764456235452 segundos. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de fuerza bruta. 
