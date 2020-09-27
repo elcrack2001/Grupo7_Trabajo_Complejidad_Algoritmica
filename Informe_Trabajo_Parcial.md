@@ -53,14 +53,13 @@ La estrategia seria partir de algún vértice U, visitar U y, después, visitar 
 ## Pseudocódigo
 ![bfs_pseudocode](http://rosalind.info/media/pseudocode_bfs.png)
 
-## Backtracking
-El Backtracking es una estrategia para encontrar soluciones a problemas que satisfacen restricciones.
-Estos problemas consisten en un conjunto (o lista) de variables a la que a cada una se le debe asignar un valor sujeto a las restricciones del problema. La técnica va creando todas las posibles combinaciones de elementos para obtener una solución. Su principal virtud es que en la mayoría de las implementaciones se puede evitar combinaciones, estableciendo funciones de acotación (o poda) reduciendo el tiempo de ejecución. 
+## Divide y venceras
+El Divide y venceras es una estrategia de la programacion que busca dividir el problema en fragmentos mas pequenos los cuales pueden ser analizados de manera mas detallada y sencilla. En el caso de nuestro algoritmo lo utilizaremos para dividir el tablero en rectangulos mas pequenos que el peon pueda analizar detalladamente y tomar la decision de desplazarse hacia otra posicion, acercandose de esta manera mas a su destino final.
 
-### Cómo funciona el algoritmo de Backtracking
+### Cómo funciona el algoritmo de Divide y venceras
 
-Esencialmente, la idea es encontrar la mejor combinación posible en un momento determinado. Durante la búsqueda, si se encuentra una alternativa incorrecta, la búsqueda retrocede hasta el paso anterior y toma la siguiente alternativa. Cuando se han terminado las posibilidades, se vuelve a la elección anterior y se toma la siguiente opción (hijo, si nos referimos a un árbol). Si no hay más alternativas la búsqueda falla. De esta manera, se crea un árbol implícito, en el que cada nodo es un estado de solución (solución parcial en el caso de nodos interiores o solución total en el caso de los nodos hoja).
-Normalmente, se suele implementar este tipo de algoritmos como un procedimiento recursivo. Así, en cada llamada al procedimiento se toma una variable y se le asignan todos los valores posibles, llamando a su vez al procedimiento para cada uno de los nuevos estados. De esta forma se ahorra espacio en memoria y tiempo de ejecución.
+En este caso lo que implementaremos seran rectangulos dentro del tablero que el peon analizara para lograr encontrar salidas. Los limites de dicho rectangulo sera definidos por las paredes que este alrededor de este y limiten su movilidad, principalmente si estan al frente ya que evitan que tome el camino mas sencillo que es simplemente avanzar. Una vez que este rectangulo sea definido y resuelto y el peon logre salir volver a analizar su nueva posicion para generar otro y de esta manera lograr llegar al otro extremo. 
+Se generan listas de psoibilidades de hacia donde puede avanzar el peon, de estas posibilidades se escoge la menor en comparacion al resto haciendo entender al peon que si va hacia esa direccion llegara mas rapido.
 
 ## Fuerza Bruta
 La fuerza bruta, es una técnica trivial pero a menudo usada, que consiste en enumerar sistemáticamente todos los posibles candidatos para la solución de un problema, con el fin de chequear si dicho candidato satisface la solución al mismo.
@@ -92,17 +91,26 @@ La metodología que utilizaremos para resolver este problema se divide en tres p
 Para iniciar nuestro proyecto nos pusimos a investigar los distintos métodos de búsqueda que existen. Luego de analizar 3 distintos métodos, analizamos su complejidad y eso mismo será lo que compararemos al finalizar el proyecto. Lo que se evaluará será el tiempo en que demoran los peones al llegar en el menor tiempo al otro extremo del tablero con estos 3 métodos y analizar por que son más efectivos unos que otros de acuerdo a los resultados obtenidos. 
 
 ## 2. Desarollo
-Esta parte la escribiremos a lo largo de nuestro proyecto pero principalmente será la implementación de los códigos para ver la complejidad de estos.
+Mientras se realizo el desarrollo de los algoritmos analizamos previamente la complejidad de estos para definir a simple vista cual aparenta ser el mas efectivo. Nuestra opcion mas certera seria el algoritmo de A* con una complejidad de O(E) siendo E el numero total de aristas. Este algoritmo utiliza grafos para encontrar la mejor opcion a donde el peon se va a desplazar. El segundo puesto en cuanto a complejidad seria para el algoritmo de divide y venceras alcanzando una complejidad de O(n^2) en la implementacion de su algoritmo de busqueda de rutas mas cortas. El ultimo puesto de complejidad se lo llevo el algoritmo de fuerza bruta siendo este el menos eficiente de los 3. 
 
 ## 3. Testeo
-Compararemos los algoritmos de acuerdo a los diferentes tipos de entrada que le entregaremos al tablero. Este será nuestro parámetro de testeo teniendo en cuenta el tamaño del tablero de (2*n)+1. 
+Luego de la complejidad se realizo un testeo para poder analizar la potencia de los 3 algoritmos. Compararemos los algoritmos de acuerdo a los diferentes tipos de entrada que le entregaremos al tablero. Este será nuestro parámetro de testeo teniendo en cuenta el tamaño del tablero y la potencia que cada algoritmo tiene. 
 
 Los tamaños de n del tablero para nuestro testeo serán: 
 
-*3
-*9 (Tamaño original)
-*100
-*1000 
+Para el de fuerza bruta: 
+*Matriz de 3x3 con obstaculos
+*Matriz de 9x9 con obstaculos
+
+Para el de Divide y venceras:
+*Matriz de 9x9 vacia
+*Matriz de 25x25 vacia
+*Matriz de 9x9 con obstaculos
+*Matriz de 101x101
+
+Para el de A*:
+*Matriz de 9x9 con obstaculos
+*Matriz de 15*15 con obstaculos
 
 El objetivo de estas pruebas es medir el tiempo de cada algoritmo que 
 
@@ -141,11 +149,16 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 # Resultados
 - BFS:
   - Para la primera matriz, el tiempo de resolución del problema es  10.62555456161499
-  - Para la primera matriz, el tiempo de resolución del problema es  17.98764456235452
+  - Para la segunda matriz, el tiempo de resolución del problema es  17.98764456235452
 - A*:
   - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> siendo el ganador la ficha número 1.
   - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> siendo el ganador la ficha número 2.
 - Divide y vencerás:
+  - Para la primera matriz 9x9 vacia, el tiempo de resolucion del problema es de:  1.0542097091674805
+  - El tiempo del tablero vacio 25x25 es:  6.013184070587158
+  - El tiempo del tablero con laberinto 9x9 es:  1.416558027267456
+  - El tiempo del tablero vacio 101x101 es:  111.29700016975403
+
 
 # Conclusiones y Recomendaciones
-- El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución.
+- El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125>, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 y finalmente el de fuerza bruta, muy por detras de los otros 2, con un tiempo total de 17.98764456235452. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de fuerza bruta. 
