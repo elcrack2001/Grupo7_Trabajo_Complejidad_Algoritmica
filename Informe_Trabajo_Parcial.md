@@ -151,8 +151,8 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 
 # Resultados
 - BFS:
-  - Para la primera matriz, el tiempo de resolución del problema es  10.62555456161499 segundos
-  - Para la segunda matriz, el tiempo de resolución del problema es  17.98764456235452 segundos
+  - Para la primera matriz, el tiempo de resolución del problema es  0.07239842414855957 segundos
+  - Para la segunda matriz, el tiempo de resolución del problema es  5.24133825302124 segundos
 - A*:
   - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> segundos siendo el ganador la ficha número 1.
   - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> segundos siendo el ganador la ficha número 2.
@@ -164,4 +164,4 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 
 
 # Conclusiones y Recomendaciones
-El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125> segundos, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 segundos y finalmente el de BFS, muy por detras de los otros 2, con un tiempo total de 17.98764456235452 segundos. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de BFS. 
+El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125> segundos, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 segundos y finalmente el de BFS, muy por detras de los otros 2, con un tiempo total de 5.24133825302124 segundos. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de BFS. 
