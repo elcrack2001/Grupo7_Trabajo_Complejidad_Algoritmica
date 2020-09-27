@@ -99,18 +99,18 @@ Luego de la complejidad se realizo un testeo para poder analizar la potencia de 
 Los tamaños de n del tablero para nuestro testeo serán: 
 
 Para el de fuerza bruta: 
-*Matriz de 3x3 con obstaculos
-*Matriz de 9x9 con obstaculos
+- Matriz de 3x3 con obstaculos
+- Matriz de 9x9 con obstaculos
 
 Para el de Divide y venceras:
-*Matriz de 9x9 vacia
-*Matriz de 25x25 vacia
-*Matriz de 9x9 con obstaculos
-*Matriz de 101x101
+- Matriz de 9x9 vacia
+- Matriz de 25x25 vacia
+- Matriz de 9x9 con obstaculos
+- Matriz de 101x101
 
 Para el de A*:
-*Matriz de 9x9 con obstaculos
-*Matriz de 15*15 con obstaculos
+- Matriz de 9x9 con obstaculos
+- Matriz de 15*15 con obstaculos
 
 El objetivo de estas pruebas es medir el tiempo de cada algoritmo que 
 
@@ -161,4 +161,4 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 
 
 # Conclusiones y Recomendaciones
-- El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125>, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 y finalmente el de fuerza bruta, muy por detras de los otros 2, con un tiempo total de 17.98764456235452. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de fuerza bruta. 
+El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125>, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 y finalmente el de fuerza bruta, muy por detras de los otros 2, con un tiempo total de 17.98764456235452. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de fuerza bruta. 
