@@ -235,5 +235,9 @@ En la siguiente imagen se puede apreciar en pleno juego, cómo los peones tienen
 Conclusiones y Recomendaciones | Entregable
 ------------ | -------------
 El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125> segundos, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 segundos y finalmente el de BFS, muy por detras de los otros 2, con un tiempo total de 5.24133825302124 segundos. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de BFS. | Trabajo Parcial
-Conclusiones hito 1 | Hito 1 - TF
-Conclusiones tf (falta) | Trabajo Final
+Según vemos ahora con la implementación de las paredes, en tiempo que toma el BFS en realizar todo el proceso según el tamaño de la tabla es:                                     tablero de 9 x 9 => 559.112548828125 segundos
+tablero de 15 x 15=> 1332.042932510376 segundos
+tablero de 25 x 25=> 3522.0999717712402 segundos
+tablero de 50 x 50=> 13749.105215072632 segundos
+tablero de 75 x 75=> 31358.9985370636 segundos
+tablero de 100 x 100 => 55145.38264274597 segundos, No obstante, como el código fue ejecutado en la herramienta de Google Collab, el tamaño del tiempo varía según variables externas como la memoria RAM otorgada por la herramienta y el procesador. | Hito 1 - TF
