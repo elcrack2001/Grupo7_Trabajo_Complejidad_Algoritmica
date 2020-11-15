@@ -184,7 +184,7 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
   - El tiempo del tablero con laberinto 9x9 es:  1.416558027267456 segundos
   - El tiempo del tablero vacio 101x101 es:  111.29700016975403 segundos
 
-## 4. Desarollo
+## 4. Implementación
 
 ### Paredes del Quoridor
 Como se mencionó previamente, la meta de un jugador es llegar al extremo opuesto de donde empezó para poder obtener la victoria. Sin embargo, su camino puede ser bloqueado por otros jugadores obstruyendo su paso con paredes. Estos bloques de paredes están ligados al tablero y constan de unos 20. Se reparten equitativamente entre los jugadores: 10 bloques para cada jugador o 5 bloques para cada jugador si el juego consta de 2 o 4 jugadores, respectivamente. En cada turno, los jugadores pueden optar por dos opciones: mover su ficha y avanzar un casillero o colocar una pared siempre y cuando este cuente con bloques para colocar. No obstante, está prohibido encerrar a un jugador con los bloques.
