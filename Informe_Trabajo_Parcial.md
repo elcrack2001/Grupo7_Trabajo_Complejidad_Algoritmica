@@ -18,6 +18,8 @@ Motivación:  Como grupo de trabajo nos enfocamos en la capacidad de reconocer r
 
 Problema: Para este trabajo nos dedicaremos a realizar un juego llamado Quoridor donde el objetivo de cada participante es llegar hasta la base del rival, en cada turno se debe escoger entre colocar dificultades como muros o avanzar.
 
+Este proyecto consistira en una investigacion para comparar tres algoritmos y ver cual es mas efectivo. Los 3 algoritmos que seran estudiados son de bfs, divide y vencera y A star. Ademas, incluiremos una funcion que hara que la computadora piense cuando colocar paredes para dificultarle el movimiento a sus adversarios y evitar que lleguen al objetivo. Ese algoritmo de paredes tambien colaborara en la eficiencia de nuestros algoritmos y sera estudiado.
+
 # Marco Teórico 
 Para el presente proyecto utilizaremos 3 algoritmos los cuales compararemos para encontrar el más eficiente. Los problemas pueden tener diferentes soluciones pero siempre existe una que en comparación al resto es la más efectiva muchas veces por su complejidad. La complejidad de un algoritmo nos ayuda a determinar el tiempo de ejecución y la memoria que requiere como parámetros para definir su eficiencia. 
 ## Pathfinding
@@ -64,6 +66,12 @@ El Divide y venceras es una estrategia de la programacion que busca dividir el p
 
 En este caso lo que implementaremos seran rectangulos dentro del tablero que el peon analizara para lograr encontrar salidas. Los limites de dicho rectangulo sera definidos por las paredes que este alrededor de este y limiten su movilidad, principalmente si estan al frente ya que evitan que tome el camino mas sencillo que es simplemente avanzar. Una vez que este rectangulo sea definido y resuelto y el peon logre salir volver a analizar su nueva posicion para generar otro y de esta manera lograr llegar al otro extremo. 
 Se generan listas de psoibilidades de hacia donde puede avanzar el peon, de estas posibilidades se escoge la menor en comparacion al resto haciendo entender al peon que si va hacia esa direccion llegara mas rapido.
+
+### Algoritmo Maxn
+
+Para este algoritmo de divide y venceras se utilizara el Maxn. La logica que seguira sera que el peon del turno correspondiente analizara a un rival al que su objetivo sera dificultar la movilidad. Primero le tratara de poner una pared en frente siempre, para que este tenga que moverse a un lado, sino es posible por diferentes motivos procedera a intentar hacerlo a los lados. Si el peon no puede colocar una pared porque ya existen o porque lo encierra, decidira moverse en su lugar. 
+Pseudo-codigo:
+
 
 ## Fuerza Bruta
 La fuerza bruta, es una técnica trivial pero a menudo usada, que consiste en enumerar sistemáticamente todos los posibles candidatos para la solución de un problema, con el fin de chequear si dicho candidato satisface la solución al mismo.
