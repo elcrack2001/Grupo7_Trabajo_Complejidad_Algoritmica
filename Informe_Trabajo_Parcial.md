@@ -2,7 +2,7 @@
 # Grupo7_Trabajo_Complejidad_Algoritmica
 
 <center><b>Complejidad Algorítmica – CC41</b></center> <br>
-<center><b>Trabajo Parcial</b></center> <br>
+<center><b>Trabajo Final</b></center> <br>
 <center><b> Carrera de Ingeniería de Software y Ciencias de la computación </b></center> <br>
 <center><b>Sección: CC41 </b></center> 
 
@@ -67,11 +67,24 @@ El Divide y venceras es una estrategia de la programacion que busca dividir el p
 En este caso lo que implementaremos seran rectangulos dentro del tablero que el peon analizara para lograr encontrar salidas. Los limites de dicho rectangulo sera definidos por las paredes que este alrededor de este y limiten su movilidad, principalmente si estan al frente ya que evitan que tome el camino mas sencillo que es simplemente avanzar. Una vez que este rectangulo sea definido y resuelto y el peon logre salir volver a analizar su nueva posicion para generar otro y de esta manera lograr llegar al otro extremo. 
 Se generan listas de psoibilidades de hacia donde puede avanzar el peon, de estas posibilidades se escoge la menor en comparacion al resto haciendo entender al peon que si va hacia esa direccion llegara mas rapido.
 
-### Algoritmo Maxn
+## Algoritmo Maxn
+Para este algoritmo de divide y venceras se utilizara el Maxn. La logica que seguira sera que el peon del turno correspondiente analizara a un rival al que su objetivo sera dificultar la movilidad. Primero le tratara de poner una pared en frente siempre, para que este tenga que moverse a un lado, sino es posible por diferentes motivos procedera a intentar hacerlo a los lados. Si el peon no puede colocar una pared porque ya existen o porque lo encierra, decidirá moverse en su lugar. 
 
-Para este algoritmo de divide y venceras se utilizara el Maxn. La logica que seguira sera que el peon del turno correspondiente analizara a un rival al que su objetivo sera dificultar la movilidad. Primero le tratara de poner una pared en frente siempre, para que este tenga que moverse a un lado, sino es posible por diferentes motivos procedera a intentar hacerlo a los lados. Si el peon no puede colocar una pared porque ya existen o porque lo encierra, decidira moverse en su lugar. 
-Pseudo-codigo:
+Pseudo-código
 
+    int MaxN(estado) {
+          if(estado_final(estado)) {
+               return evaluacion_heurística(estado);
+           }
+           max=-infinito;
+           while exist movimiento_posible(estado) {
+               val=-MaxN(mover(mov, estado));
+               if (val>max) {
+                   max=val;
+               }
+           }
+           return(max);
+       }
 
 ## Fuerza Bruta
 La fuerza bruta, es una técnica trivial pero a menudo usada, que consiste en enumerar sistemáticamente todos los posibles candidatos para la solución de un problema, con el fin de chequear si dicho candidato satisface la solución al mismo.
@@ -93,11 +106,12 @@ si válido (P, c) entonces mostrar (P, c)
 c <- siguiente (P, c)
 
 # Metodología
-La metodología que utilizaremos para resolver este problema se divide en tres partes:
+La metodología que utilizaremos para resolver este problema se divide en cuatro partes:
 
 1. Investigación
 2. Desarrollo
 3. Testeo
+4. Implementación
 
 ## 1. Investigación
 
@@ -143,8 +157,8 @@ c) Declaracíon de diferentes tamanos de entradas de datos para trabajar
 Para la creación de nuestra tabla utilizaremos la fórmula de (2*n)+1, ya que consideraremos las líneas de una tabla normal como espacios dentro de una matriz para colocar las paredes. utilizaremos entonces para las comparaciones los tamaños de: 
 
 - 9x9 (Tamaño original de tablero de quoridor)
-- 15*15
-- 25*22
+- 15 x 15
+- 25 x 22
 
 No obstante, esto se implementará cuando se habilite la funcionalidad de colocar las paredes.
 
@@ -170,6 +184,52 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
   - El tiempo del tablero con laberinto 9x9 es:  1.416558027267456 segundos
   - El tiempo del tablero vacio 101x101 es:  111.29700016975403 segundos
 
+## 4. Desarollo
+
+### Paredes del Quoridor
+Como se mencionó previamente, la meta de un jugador es llegar al extremo opuesto de donde empezó para poder obtener la victoria. Sin embargo, su camino puede ser bloqueado por otros jugadores obstruyendo su paso con paredes. Estos bloques de paredes están ligados al tablero y constan de unos 20. Se reparten equitativamente entre los jugadores: 10 bloques para cada jugador o 5 bloques para cada jugador si el juego consta de 2 o 4 jugadores, respectivamente. En cada turno, los jugadores pueden optar por dos opciones: mover su ficha y avanzar un casillero o colocar una pared siempre y cuando este cuente con bloques para colocar. No obstante, está prohibido encerrar a un jugador con los bloques.
+
+### Código de funcionalidad del bloqueo
+
+    def ponerpared(self,tablero,listaAD):
+        posicion = self.buscarPeon(listaAD)#busco la posicion del adversario
+        #print("la posicion es ",posicion)
+        posicion[0]=posicion[0]+1
+        #print("la posicion actualizada ess ",posicion)
+        #print(tablero)
+        if self.NParedes==0:
+          return self.obtenerruta(tablero,listaAD)
+        #en el siguiente if estamos colocando una pared horizontal
+        if tablero[posicion[0]][posicion[1]]==0:
+          centinela=self.ejecutarpared(tablero,posicion,0,1,0,1,0,2,0,0,1,2)#lado derecho horizontal
+          if centinela == False:
+            centinela=self.ejecutarpared(tablero,posicion,0,1,0,-1,0,-2,0,0,-1,-2)#lado izquierdo horizontal
+            if centinela==False:
+              return self.obtenerruta(tablero,listaAD)#no se pudo me muev
+        else:
+          #ahora vamos a intentar colocar una pared vertical
+          posicion[0] = posicion[0] -1
+          posicion[1] = posicion[1] + 1 # como intento para poner una pared del lado derecho
+          if tablero[posicion[0]][posicion[1]]==0:
+            centinela=self.ejecutarpared(tablero,posicion,0,1,1,0,2,0,1,2,0,0)#lado derecho vertical
+            if centinela == False:
+              centinela=self.ejecutarpared(tablero,posicion,0,1,-1,0,-2,0,-1,-2,0,0)#lado izquierda vertical
+              if centinela==False:
+                return self.obtenerruta(tablero,listaAD)#no se pudo me muev
+          else:
+            posicion[1] = posicion[1] - 2
+            if tablero[posicion[0]][posicion[1]]==0:
+              centinela=self.ejecutarpared(tablero,posicion,0,1,1,0,2,0,1,2,0,0)#lado derecho vertical
+              if centinela == False:
+                centinela=self.ejecutarpared(tablero,posicion,0,1,-1,0,-2,0,-1,-2,0,0)#lado izquierda vertical
+                if centinela==False:
+                  return self.obtenerruta(tablero,listaAD)#no se pudo me mue
+        self.NParedes=self.NParedes-1
+        return [self.getPX(),self.getPY()]
+
+En la siguiente imagen se puede apreciar en pleno juego, cómo los peones tienen los caminos bloqueados y para ello deberán tomar diferentes rutas con el objetivo de llegar a la meta antes que los contrincantes
+
+![game](/functional-game.jpeg)
 
 # Conclusiones y Recomendaciones
 El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con obstaculos, siendo de estas 3 el algoritmo A* como ganador con un rango de tiempo de <0.00262260437011719; 0.00476837158203125> segundos, luego le sigue el algoritmo de divide y venceras con un tiempo de 1.0542097091674805 segundos y finalmente el de BFS, muy por detras de los otros 2, con un tiempo total de 5.24133825302124 segundos. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de BFS. 
