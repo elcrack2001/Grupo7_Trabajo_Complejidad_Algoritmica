@@ -229,7 +229,7 @@ Como se mencionó previamente, la meta de un jugador es llegar al extremo opuest
 
 En la siguiente imagen se puede apreciar en pleno juego, cómo los peones tienen los caminos bloqueados y para ello deberán tomar diferentes rutas con el objetivo de llegar a la meta antes que los contrincantes
 
-![game](/functional-game.jpeg)
+![game](/img/functional-game.jpeg)
 
 # Conclusiones y Recomendaciones
 Conclusiones y Recomendaciones | Entregable
