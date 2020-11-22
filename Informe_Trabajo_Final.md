@@ -179,23 +179,29 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 # Resultados
 - BFS:
   -4 jugadores:
-    - Para la primera matriz , el tiempo de resolución del problema es  584.627628326416 segundos.
-    - Para la segunda matriz, el tiempo de resolución del problema es  1435.95552444458 segundos.
-    - Para la tercera matriz, el tiempo de resolución del problema es  3702.0716667175293 segundos.
+    - Para la primera matriz 9 x 9, el tiempo de resolución del problema es  584.627628326416 segundos.
+    - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es  1435.95552444458 segundos.
+    - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es  3702.0716667175293 segundos.
   -2 jugadores:
-    - Para la primera matriz , el tiempo de resolución del problema es  565.314531326294 segundos
-    - Para la segunda matriz, el tiempo de resolución del problema es  1354.5148372650146 segundos
-    - Para la tercera matriz, el tiempo de resolución del problema es  3494.032144546509 segundos
+    - Para la primera matriz 9 x 9, el tiempo de resolución del problema es  565.314531326294 segundos
+    - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es  1354.5148372650146 segundos
+    - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es  3494.032144546509 segundos
     
 - A*:
   - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> segundos siendo el ganador la ficha número 1.
   - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> segundos siendo el ganador la ficha número 2.
   
 - Divide y vencerás:
-  - Para la primera matriz 9x9 vacia, el tiempo de resolucion del problema es de:  1.0542097091674805 segundos
-  - El tiempo del tablero vacio 25x25 es:  6.013184070587158 segundos
-  - El tiempo del tablero con laberinto 9x9 es:  1.416558027267456 segundos
-  - El tiempo del tablero vacio 101x101 es:  111.29700016975403 segundos
+  -4 jugadores:
+    - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 98.19989824295044 segundos.
+    - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 229.0978240966797 segundos.
+    - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es 220.007994890213 segundos.
+  -2 jugadores:
+    - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 89.33368945121765 segundos.
+    - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 44.1855263710022 segundos.
+    - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es  98.3169014453888 segundos.
+  
+![Graficosss](https://user-images.githubusercontent.com/54952908/99893311-634c1800-2c4c-11eb-83dc-86d3d237661b.png)
 
 ## 4. Implementación
 
