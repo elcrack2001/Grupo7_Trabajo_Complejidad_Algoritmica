@@ -179,19 +179,18 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 # Resultados
 - BFS:
   -4 jugadores:
-    - Para la primera matriz , el tiempo de resolución del problema es  0.07239842414855957 segundos
-    - Para la segunda matriz, el tiempo de resolución del problema es  5.24133825302124 segundos
-  
-  9 x 9 4 jugadores => 584.627628326416 segundos
-15 x 15 4 jugadores => 1435.95552444458 segundos
-25 x 25 4 jugadores => 3702.0716667175293 segundos
-
-9 x 9 2 jugadores => 565.314531326294 segundos
-15 x 15 2 jugadores => 1354.5148372650146 segundos
-25 x 25 2 jugadores => 3494.032144546509 segundos
+    - Para la primera matriz , el tiempo de resolución del problema es  584.627628326416 segundos.
+    - Para la segunda matriz, el tiempo de resolución del problema es  1435.95552444458 segundos.
+    - Para la tercera matriz, el tiempo de resolución del problema es  3702.0716667175293 segundos.
+  -2 jugadores:
+    - Para la primera matriz , el tiempo de resolución del problema es  565.314531326294 segundos
+    - Para la segunda matriz, el tiempo de resolución del problema es  1354.5148372650146 segundos
+    - Para la tercera matriz, el tiempo de resolución del problema es  3494.032144546509 segundos
+    
 - A*:
   - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> segundos siendo el ganador la ficha número 1.
   - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> segundos siendo el ganador la ficha número 2.
+  
 - Divide y vencerás:
   - Para la primera matriz 9x9 vacia, el tiempo de resolucion del problema es de:  1.0542097091674805 segundos
   - El tiempo del tablero vacio 25x25 es:  6.013184070587158 segundos
