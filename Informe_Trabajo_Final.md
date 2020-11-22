@@ -139,6 +139,11 @@ Para el de A*:
 - Matriz de 9x9 con obstaculos
 - Matriz de 15*15 con obstaculos
 
+Para el BFS:
+- Matriz de 9x9 con paredes
+- Matriz de 15x15 con paredes
+- Matriz de 25x25 con paredes
+
 El objetivo de estas pruebas es medir el tiempo de cada algoritmo que 
 
 a) Declaración de 3 algoritmos a usar para alcanzar el objetivo
