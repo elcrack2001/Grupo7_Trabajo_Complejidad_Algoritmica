@@ -171,35 +171,31 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
 
 # Resultados
 - BFS:
-  -4 jugadores:
+  - 4 jugadores:
     - Para la primera matriz 9 x 9, el tiempo de resolución del problema es  584.627628326416 segundos.
     - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es  1435.95552444458 segundos.
     - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es  3702.0716667175293 segundos.
-  -2 jugadores:
+  - 2 jugadores:
     - Para la primera matriz 9 x 9, el tiempo de resolución del problema es  565.314531326294 segundos
     - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es  1354.5148372650146 segundos
     - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es  3494.032144546509 segundos
     
-- A*:
-  - Para la primera matriz, el tiempo de resolución del problema oscila en el rango de <0.00262260437011719; 0.00476837158203125> segundos siendo el ganador la ficha número 1.
-  - Para la segunda matriz, el tiempo de resolución del problema oscila en el rango de <0.00286102294921875; 0.00452995300292969> segundos siendo el ganador la ficha número 2.
-  
 - Divide y vencerás:
-  -4 jugadores:
+  - 4 jugadores:
     - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 98.19989824295044 segundos.
     - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 229.0978240966797 segundos.
     - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es 220.007994890213 segundos.
-  -2 jugadores:
+  - 2 jugadores:
     - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 89.33368945121765 segundos.
     - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 44.1855263710022 segundos.
     - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es  98.3169014453888 segundos.
     
 - Alpha y Beta (interfaz gráfica):
-  -4 jugadores (5 paredes):
+  - 4 jugadores (5 paredes):
     - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 97.63358044624329 segundos.
     - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 2132.595188140869 segundos.
     - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es 57513.458762111478 segundos.
-  -2 jugadores (10 paredes):
+  - 2 jugadores (10 paredes):
     - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 34.952115058898926 segundos
     - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 215.07993841171265 segundos
     - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es 518.42687521547782 segundos
