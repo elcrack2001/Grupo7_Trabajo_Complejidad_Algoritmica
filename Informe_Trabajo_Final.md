@@ -200,7 +200,8 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
     - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 215.07993841171265 segundos
     - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es 518.42687521547782 segundos
   
-![Graficosss](https://user-images.githubusercontent.com/54952908/99893311-634c1800-2c4c-11eb-83dc-86d3d237661b.png)
+![Graficooss](https://user-images.githubusercontent.com/54952908/100162003-924acf80-2e80-11eb-838f-4a59b5b04ac6.png)
+No se incluyo la 6ta prueba ya que el algoritmo de alfa y beta en esa prueba saca un numero muy elevado (mas de 57 000 segundos) por lo que la grafica no se aprecia del todo.
 
 ## 4. Implementación
 
