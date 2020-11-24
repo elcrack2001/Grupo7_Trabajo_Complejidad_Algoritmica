@@ -47,25 +47,25 @@ class Board(Drawable):
                             board=self,
                             color=prop.PAWN_A_COL,
                             border_color=prop.PAWN_BORDER_COL,
-                            coord=Coord(rows - 1, 5),
+                            coord=Coord(rows - 1, 3),
                             )]
         self.pawns += [Pawn(screen=screen,
                             board=self,
                             color=prop.PAWN_B_COL,
                             border_color=prop.PAWN_BORDER_COL,
-                            coord=Coord(0, 5)
+                            coord=Coord(0, 3)
                             )]
         self.pawns += [Pawn(screen=screen,
                             board=self,
                             color=prop.PAWN_C_COL,
                             border_color=prop.PAWN_BORDER_COL,
-                            coord=Coord(5, 0)
+                            coord=Coord(3, 0)
                             )]
         self.pawns += [Pawn(screen=screen,
                             board=self,
                             color=prop.PAWN_D_COL,
                             border_color=prop.PAWN_BORDER_COL,
-                            coord=Coord(5, cols - 1)
+                            coord=Coord(3, cols - 1)
                             )]
 
         self.regenerate_board(prop.CELL_COLOR, prop.CELL_BORDER_COLOR)

@@ -14,7 +14,7 @@ from .acciones import Action, ActionPlaceWall, ActionMovePawn
 
 class BOT:
     def __init__(self, pawn, level=1):
-        self.level = level  # Level of difficulty
+        self.level = level
         self.board = pawn.board
         if prop.CACHE_ENABLED:
             self._memoize_think = PersistentDict(prop.CACHE_AI_FNAME, flag='c')
