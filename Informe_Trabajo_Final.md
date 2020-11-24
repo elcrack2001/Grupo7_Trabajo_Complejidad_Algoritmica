@@ -67,8 +67,8 @@ El Divide y venceras es una estrategia de la programacion que busca dividir el p
 En este caso lo que implementaremos seran rectangulos dentro del tablero que el peon analizara para lograr encontrar salidas. Los limites de dicho rectangulo sera definidos por las paredes que este alrededor de este y limiten su movilidad, principalmente si estan al frente ya que evitan que tome el camino mas sencillo que es simplemente avanzar. Una vez que este rectangulo sea definido y resuelto y el peon logre salir volver a analizar su nueva posicion para generar otro y de esta manera lograr llegar al otro extremo. 
 Se generan listas de psoibilidades de hacia donde puede avanzar el peon, de estas posibilidades se escoge la menor en comparacion al resto haciendo entender al peon que si va hacia esa direccion llegara mas rapido.
 
-## Algoritmo Maxn
-Para este algoritmo de divide y venceras se utilizara el Maxn. La logica que seguira sera que el peon del turno correspondiente analizara a un rival al que su objetivo sera dificultar la movilidad. Primero le tratara de poner una pared en frente siempre, para que este tenga que moverse a un lado, sino es posible por diferentes motivos procedera a intentar hacerlo a los lados. Si el peon no puede colocar una pared porque ya existen o porque lo encierra, decidirá moverse en su lugar. 
+## Algoritmo MaxN
+Para este algoritmo de divide y venceras se utilizara el MaxN. La lógica que seguirá será que el peón del turno correspondiente analizará a un rival al que su objetivo sera dificultar la movilidad. Primero le tratara de poner una pared en frente siempre, para que este tenga que moverse a un lado, sino es posible por diferentes motivos procedera a intentar hacerlo a los lados. Si el peon no puede colocar una pared porque ya existen o porque lo encierra, decidirá moverse en su lugar. 
 
 Pseudo-código
 
@@ -85,6 +85,11 @@ Pseudo-código
            }
            return(max);
        }
+
+## Algoritmo Alpha-Beta
+Este algoritmo es una mejora del algoritmo Minimax; diseñado a los juegos con jugadores (bots) por turnos. Se aplica en espacios de estados grandes para analizar todos los nodos establecidos. Aplica evaluaciones heurísticas interrumpiendo la búsqueda en algún nivel del grafo. Si el valor del nodo MAX (alfa) es menor que el más alto hasta este momento, entonces omite el nodo actual. Si el valor del nodo MIN (beta) es mayor que el nodo más bajo hasta el momento, entonces omite el nodo actual. Alpha-Beta permtite búsqueda dos veces más profunda.
+
+![Alpha-Beta](/img/Alpha-Beta.png)
 
 ## Fuerza Bruta
 La fuerza bruta, es una técnica trivial pero a menudo usada, que consiste en enumerar sistemáticamente todos los posibles candidatos para la solución de un problema, con el fin de chequear si dicho candidato satisface la solución al mismo.
@@ -125,7 +130,7 @@ Luego de la complejidad se realizo un testeo para poder analizar la potencia de 
 
 Los tamaños de n del tablero para nuestro testeo serán: 
 
-- Tabla 9x9 2 jugadores
+- Tabla 9x9 2 peones
 - Tabla 9x9 4 peones
 - Tabla 15x15 2 peones
 - Tabla 15x15 4 peones
@@ -188,6 +193,16 @@ Para los experimentos, se desea medir el tiempo de cada algoritmo descrito (Back
     - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 89.33368945121765 segundos.
     - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 44.1855263710022 segundos.
     - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es  98.3169014453888 segundos.
+    
+- Alpha y Beta (interfaz gráfica):
+  -4 jugadores (5 paredes):
+    - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 97.63358044624329 segundos.
+    - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 2132.595188140869 segundos.
+    - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es 57513.458762111478 segundos.
+  -2 jugadores (10 paredes):
+    - Para la primera matriz 9 x 9, el tiempo de resolución del problema es 34.952115058898926 segundos
+    - Para la segunda matriz 15 x 15, el tiempo de resolución del problema es 215.07993841171265 segundos
+    - Para la tercera matriz 25 x 25, el tiempo de resolución del problema es 518.42687521547782 segundos
   
 ![Graficosss](https://user-images.githubusercontent.com/54952908/99893311-634c1800-2c4c-11eb-83dc-86d3d237661b.png)
 
@@ -240,5 +255,5 @@ En la siguiente imagen se puede apreciar en pleno juego, cómo los peones tienen
 
 # Conclusiones y Recomendaciones
 
-El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparacion de los 3 algoritmos ante la prueba de la matriz 9x9 con 4 peones, el algoritmo de divide y venceras con un tiempo de 98.19989824295044 segundos y el de BFS con un tiempo de  581.6788673400879 segundos, muy por detras del otro. Luego de haber analizado la complejidad de estos 3 algoritmos se podia decir cual era el mas efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia y la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de BFS. 
+El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparación de los 3 algoritmos ante la prueba de la matriz 9x9 con 4 peones, el algoritmo de divide y vencerás con un tiempo de 98.19989824295044 segundos y el de BFS con un tiempo de  581.6788673400879 segundos, muy por detrás del otro. Luego de haber analizado la complejidad de estos 3 algoritmos se podría decir cual era el más efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia, la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de BFS. 
 No obstante, como los códigos fueron ejecutados en la herramienta de Google Collab, el tamaño del tiempo varía según variables externas como la memoria RAM otorgada por la herramienta y el procesador.
