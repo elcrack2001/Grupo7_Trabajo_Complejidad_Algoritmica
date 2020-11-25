@@ -250,6 +250,10 @@ En la siguiente imagen se puede apreciar en pleno juego, cómo los peones tienen
 
 ![game](/img/functional-game.jpeg)
 
+# Exposición
+### (Hacer clic en la imagen para redireccionar a youtube)
+[![EXPOSICION](https://es-static.z-dn.net/files/dae/486a3c046c4c5e2af78157a9211e3527.jpg)](https://www.youtube.com/watch?v=y4V7Q5XA1MI&feature=youtu.be&ab_channel=AdrianMoscol)
+
 # Conclusiones y Recomendaciones
 
 El tiempo de respuesta de los algoritmos para la resolución de hallar el camino más corto depende de un factor externo el cuál es el hardware en dónde se corren las pruebas. Para poder acercarnos a una evaluación y decisión sobre qué algoritmo es más eficiente, es necesario evaluar su complejidad. Como recomendación, es necesario realizar varias pruebas para poder hallar un rango de intervalos de tiempo que presenta la solución. Sin embargo, se vieron resultados muy notorios en la comparación de los 3 algoritmos ante la prueba de la matriz 9x9 con 4 peones, el algoritmo de divide y vencerás con un tiempo de 98.19989824295044 segundos y el de BFS con un tiempo de  581.6788673400879 segundos, muy por detrás del otro. Luego de haber analizado la complejidad de estos 3 algoritmos se podría decir cual era el más efectivo pero al ponerlos en prueba es donde realmente se nota la diferencia, la eficiencia y superioridad que tiene uno ante otro como seria el caso del A* contra el de BFS. 
